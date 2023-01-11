@@ -1,4 +1,9 @@
 <form [formGroup]="this.criteriForm">
+    <label>Triar criteri
+        <select>
+            <option *ngFor="let criteris of agafarLocalStorage('criteris')">{{ criteris }}</option>
+          </select>          
+    </label><br><br>
     <label>Valoració:
             <input type="text" formControlName="valoracio">
                 <input type="radio" id="1" name="nota" value="1" formControlName="nota">

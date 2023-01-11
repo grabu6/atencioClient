@@ -27,6 +27,9 @@ export class TemplateDrivenComponent implements OnInit{
         nota:new FormControl('')
       })
     }
+    agafarLocalStorage(key:string): string[]{
+      return localStorage.getItem(key)!.split(',');
+    }
     afegirValoracio(){
       this.valoracions.push(this.criteriForm.get('valoracio')?.value);
       console.log(this.valoracions);

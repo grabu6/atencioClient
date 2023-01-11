@@ -1,33 +1,24 @@
-<button (click)="recuperarCriteris()">Acabar votació i veure taula</button>
+<button (click)="recuperarCriteris()">Veure taula</button>
 <table>
     <thead>
       <tr>
-        <th>Criteris</th>
-        <th>Valoracions</th>
-        <th>Notes</th>
+        <th>
+        <th *ngFor="let nota of notesStorage">
+            {{ nota }}
+        </th>
       </tr>
     </thead>
-    <tbody>
       <tr>
-        <td>
-            <li *ngFor="let criteri of criterisStorage">
-                {{ criteri }}
-            </li>
-        </td> 
-        <td>
-            <li *ngFor="let valoracio of valoracionsStorage">
+        <tbody *ngFor="let criteri of criterisStorage">
+                <td>{{ criteri }}</td>
+        </tbody> 
+        <td *ngFor="let valoracio of valoracionsStorage">
                 {{ valoracio }}
-            </li>
-
-        </td>
-        <td>
-            <li *ngFor="let nota of notesStorage">
-                {{ nota }}
-            </li>
         </td>
       </tr>
-    </tbody>
 </table>
 <button (click)="ferMitjana()">Mitjana</button>
+<div id="mitjana">
 
+</div>
  
