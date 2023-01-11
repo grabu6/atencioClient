@@ -1,1 +1,9 @@
-<p>reactive-forms works!</p>
+<form [formGroup]="this.criteriForm">
+    <label>Nom:
+        <input type="text" formControlName="nom">
+    </label><br><br>
+    <button (click)="afegirCriteri()" [disabled]="!this.criteriForm.valid">Afegir criteri</button><br>
+    <h1>Llistat de criteris</h1>
+    <ul>
+        <li *ngFor="let criteri of criteris">{{criteri}}</li>
+    </ul>

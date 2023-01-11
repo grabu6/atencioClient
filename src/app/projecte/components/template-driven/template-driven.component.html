@@ -1,1 +1,23 @@
-<p>template-driven works!</p>
+<form [formGroup]="this.criteriForm">
+    <label>Valoració:
+            <input type="text" formControlName="valoracio">
+                <input type="radio" id="1" name="nota" value="1" formControlName="nota">
+                <label for="1">1</label>
+                <input type="radio" id="2" name="nota" value="2" formControlName="nota">
+                <label for="2">2</label>
+                <input type="radio" id="3" name="nota" value="3" formControlName="nota">
+                <label for="3">3</label>
+                <input type="radio" id="4" name="nota" value="4" formControlName="nota">
+                <label for="4">4</label>
+    </label><br><br>
+    <label>Descripció:<textarea type="descripcio" formControlName="descripcio"></textarea></label>
+    <br><br>
+    <button (click)="afegirValoracio()" [disabled]="!this.criteriForm.valid">Agregar valoració</button><br>
+    <h1>Llistat de valoracions</h1>
+    <ul>
+        <li *ngFor="let valoracio of valoracions">{{valoracio}}</li>       
+    </ul>
+    <h1>Llistat de notes</h1>
+    <ul>
+        <li *ngFor="let nota of notes">{{nota}}</li>
+    </ul>         
